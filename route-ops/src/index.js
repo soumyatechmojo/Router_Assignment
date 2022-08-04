@@ -1,13 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import App from './App';
+import Details from './Details'
+import CreateForm from './CreateForm'
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+     <BrowserRouter>
+    <Routes>
+      <Route path='/' element={<App/>}></Route>
+      <Route path='/more-details' element={<Details/>}></Route>
+      <Route path='/create-form' element={<CreateForm />}></Route>
+    </Routes>
+    </BrowserRouter>
   </React.StrictMode>
 );
 
